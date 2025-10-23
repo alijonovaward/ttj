@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 from django.conf.global_settings import AUTH_USER_MODEL, LOGOUT_REDIRECT_URL
@@ -73,6 +73,9 @@ TEMPLATES = [
     },
 ]
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 WSGI_APPLICATION = 'conf.wsgi.application'
 
 
@@ -111,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'uz-uz'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
 
