@@ -40,6 +40,6 @@ class Director(models.Model):
 
 class Employee(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='admin')
-   # dormitory = models.ForeignKey(Dormitory, on_delete=models.CASCADE, null=True, blank=True, related_name='employees')
+
     def __str__(self):
         return f"Admin -> {self.user.get_full_name()}"
