@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Assalomu alaykum {{ user.first_name}} {{ user.last_name }}!</h1>
+
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Chiqish</button>
+</form>
+
+{% endblock %}
