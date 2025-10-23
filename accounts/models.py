@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from django.core.exceptions import ValidationError
+from yotoqxona.models import Dormitory
 
 class CustomUser(AbstractUser):
     ROLE_CHOICES = [
@@ -40,6 +41,6 @@ class Director(models.Model):
 
 class Employee(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='admin')
-
+    dormitory = models.ForeignKey(Dormitory, on_delete=models.PROTECT, related_name="employees")
     def __str__(self):
         return f"Admin -> {self.user.get_full_name()}"
